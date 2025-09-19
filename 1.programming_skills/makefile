@@ -8,3 +8,6 @@ run2:
 run3:
 	g++ -std=c++17 -o build/3.leet 3.leet.cpp && ./build/3.leet
 
+run4:
+	g++ -std=c++17 -o build/4.leet 4.leet.cpp && ./build/4.leet
+
