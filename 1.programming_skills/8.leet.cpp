@@ -18,19 +18,22 @@ class Solution {
 public:
     bool isMonotonic(vector<int>& nums) {
         std::pair<int, int> myPair(0, 0);
-        int nul {0};
+        int calc {0};
         for(int i = 0; i < nums.size()-1; i++)
         {
-            if(nums[i+1]-nums[i] > 0 )
+            calc = nums[i + 1] - nums[i];
+            if(calc > 0)
             {
                 myPair.first = 1;
-            } else if(nums[i+1]-nums[i] < 0){
+            } else if(calc < 0)
+            {
                 myPair.first = -1;
             } else {
                 continue;
             }
 
-            if (myPair.first == myPair.second || myPair.second == 0){
+            if (myPair.first == myPair.second || myPair.second == 0)
+            {
                 myPair.second = myPair.first;
             } else {
                 return false;
