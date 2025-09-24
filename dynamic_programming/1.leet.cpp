@@ -11,6 +11,7 @@
 #include <vector>
 #include <cmath>
 #include <map>
+#include <unordered_map>
 #include <algorithm> 
 
 using namespace std;
@@ -81,6 +82,13 @@ public:
         // Step 5: Return the maximum points
         return dp[max_num];
     }
+    int deleteAndEarnRecurs(unordered_map<int, int>& frequency, int max_num) {
+
+        if(max_num == 0) return 0; // No points for 0
+        if(max_num == 1) return frequency[1] * 1; // Points for 1
+
+        return max(deleteAndEarnRecurs(frequency,max_num - 1), deleteAndEarnRecurs(frequency,max_num - 2) + max_num * frequency[max_num]);
+    }
 };
 
 int main()
@@ -89,7 +97,20 @@ int main()
     vector<int> data = {8,3,4,7,6,6,9,2,5,8,2,4,9,5,9,1,5,7,1,4};
     vector<int> data1 = {1,2,5,9};
 
-    int result = Sol.deleteAndEarn(data);
+    int result = Sol.deleteAndEarn2(data);
     cout << result << endl;
+
+
+    // Recursion
+    unordered_map<int, int> frequency;
+    int max_num = 0;
+    for (int num : data) {
+        frequency[num]++;
+        max_num = max(max_num, num);
+    }
+    int result_rec = Sol.deleteAndEarnRecurs(frequency, max_num);
+    cout << result_rec << endl;
+
+
     return 0;
 }
