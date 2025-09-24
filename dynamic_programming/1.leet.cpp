@@ -82,12 +82,13 @@ public:
         // Step 5: Return the maximum points
         return dp[max_num];
     }
-    int deleteAndEarnRecurs(unordered_map<int, int>& frequency, int max_num) {
+    int deleteAndEarnRecurs(unordered_map<int, int>& frequency, int max_num, vector<int>& dp) {
 
+        if(dp[max_num != 0]) return dp[max_num]; // Мемоизация
         if(max_num == 0) return 0; // No points for 0
         if(max_num == 1) return frequency[1] * 1; // Points for 1
 
-        return max(deleteAndEarnRecurs(frequency,max_num - 1), deleteAndEarnRecurs(frequency,max_num - 2) + max_num * frequency[max_num]);
+        return dp[max_num] = max(deleteAndEarnRecurs(frequency,max_num - 1, dp), deleteAndEarnRecurs(frequency,max_num - 2, dp) + max_num * frequency[max_num]);
     }
 };
 
@@ -108,7 +109,10 @@ int main()
         frequency[num]++;
         max_num = max(max_num, num);
     }
-    int result_rec = Sol.deleteAndEarnRecurs(frequency, max_num);
+        // Create a dp array
+    vector<int> dp(max_num + 1, 0);
+
+    int result_rec = Sol.deleteAndEarnRecurs(frequency, max_num, dp);
     cout << result_rec << endl;
 
 
