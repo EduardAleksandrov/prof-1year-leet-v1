@@ -1,6 +1,6 @@
 /*
     682. Baseball Game
-    
+
     You are keeping the scores for a baseball game with strange rules. At the beginning of the game, you start with an empty record.
 
     You are given a list of strings operations, where operations[i] is the ith operation you must apply to the record and is one of the following:
@@ -41,13 +41,13 @@ public:
     int calPoints(vector<string>& operations) {
         stack<int> stack;
         int result {0};
-        for(int i = 0; i < operations.size(); i++)
+        for(long unsigned int i = 0; i < operations.size(); i++)
         {
             try
             {
                 if(std::stoi(operations[i])) stack.push(std::stoi(operations[i]));
             } catch (const std::invalid_argument& e) {
-                    std::cerr << "Invalid number: " << operations[i] << std::endl;
+                std::cerr << "Invalid number: " << operations[i] << std::endl;
             } catch (const std::out_of_range& e) {
                 std::cerr << "Number out of range: " << operations[i] << std::endl;
             }

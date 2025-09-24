@@ -33,4 +33,7 @@ run11:
 	g++ -std=c++17 -o build/11.leet 11.leet.cpp && ./build/11.leet
 
 run12:
-	g++ -std=c++17 -o build/12.leet 12.leet.cpp && ./build/12.leet
+	g++ -std=c++17 -o build/12.leet 12.leet.cpp -g -Wall && ./build/12.leet
+
+run12gdb: run12
+	gdb ./build/12.leet
