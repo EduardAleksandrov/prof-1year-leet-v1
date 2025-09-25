@@ -40,3 +40,7 @@ run12gdb: run12
 
 run13:
 	g++ -std=c++17 -o build/13.leet 13.leet.cpp && ./build/13.leet
+
+run14:
+	g++ -std=c++17 -o build/14.leet 14.leet.cpp && ./build/14.leet
+
