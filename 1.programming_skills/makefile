@@ -65,5 +65,7 @@ run20:
 run21:
 	g++ -std=c++17 -o build/21.leet 21.leet.cpp && ./build/21.leet
 
+run22:
+	g++ -std=c++17 -o build/22.leet 22.leet.cpp && ./build/22.leet
 
 
