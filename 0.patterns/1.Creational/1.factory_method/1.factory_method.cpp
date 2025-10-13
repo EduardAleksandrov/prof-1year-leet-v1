@@ -1,3 +1,7 @@
+/*
+    Factory Method
+    Фабричный метод
+*/
 #include <iostream>
 #include <string>
 #include <memory>

@@ -1,3 +1,7 @@
+/*
+    Abstract factory
+    Абстрактная фабрика
+*/
 #include <iostream>
 #include <memory>
 
@@ -26,9 +30,10 @@ private:
     std::unique_ptr<Movement> movement; // Use unique_ptr for automatic memory management
 };
 
+// композиция
 class HeroTwo {
 public:
-    HeroTwo(std::shared_ptr<HeroFactoryT> factory) {
+    HeroTwo(std::shared_ptr<HeroFactoryT>& factory) {
         weapon = factory->CreateWeapon();
         movement = factory->CreateMovement();
     }
