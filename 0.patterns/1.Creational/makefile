@@ -4,3 +4,6 @@ run1:
 
 run2:
 	g++ -std=c++17 -o build/2.abstract_factory ./2.abstract_factory/2.abstract_factory.cpp && ./build/2.abstract_factory
+
+run3:
+	g++ -std=c++17 -o build/3.singleton ./3.singleton/3.singleton.cpp && ./build/3.singleton
