@@ -7,3 +7,6 @@ run2:
 
 run3:
 	g++ -std=c++17 -o build/3.singleton ./3.singleton/3.singleton.cpp -pthread && ./build/3.singleton
+
+run4:
+	g++ -std=c++17 -o build/4.prototype ./4.prototype/4.prototype.cpp && ./build/4.prototype
