@@ -10,3 +10,6 @@ run3:
 
 run4:
 	g++ -std=c++17 -o build/4.prototype ./4.prototype/4.prototype.cpp && ./build/4.prototype
+
+run5:
+	g++ -std=c++17 -o build/5.builder ./5.builder/5.builder.cpp && ./build/5.builder
