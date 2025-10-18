@@ -13,3 +13,6 @@ run4:
 
 run5:
 	g++ -std=c++17 -o build/5.builder ./5.builder/5.builder.cpp && ./build/5.builder
+
+run6:
+	g++ -std=c++17 -o build/6.pool ./6.pool/6.pool.cpp && ./build/6.pool
