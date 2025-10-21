@@ -1,4 +1,4 @@
 
 run1:
-	g++ -std=c++17 -o build/1.leet 1.leet.cpp && ./build/1.leet
+	g++ -std=c++17 -o build/1.decorator ./1.decorator/1.decorator.cpp && ./build/1.decorator
 
