@@ -14,5 +14,11 @@ run4:
 run5:
 	g++ -std=c++17 -o build/5.composite ./5.composite/5.composite.cpp && ./build/5.composite
 
+run6:
+	g++ -std=c++17 -o build/6.bridge ./6.bridge/6.bridge.cpp && ./build/6.bridge
+
+run61:
+	g++ -std=c++17 -o build/6.bridge_unique_ptr ./6.bridge/6.bridge_unique_ptr.cpp && ./build/6.bridge_unique_ptr
+
 run7:
 	g++ -std=c++17 -o build/7.flyweight ./7.flyweight/7.flyweight.cpp && ./build/7.flyweight
