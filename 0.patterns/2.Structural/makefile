@@ -13,3 +13,6 @@ run4:
 
 run5:
 	g++ -std=c++17 -o build/5.composite ./5.composite/5.composite.cpp && ./build/5.composite
+
+run7:
+	g++ -std=c++17 -o build/7.flyweight ./7.flyweight/7.flyweight.cpp && ./build/7.flyweight
