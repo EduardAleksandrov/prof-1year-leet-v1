@@ -15,6 +15,8 @@ where ownership semantics expected only one owner.
 Efficiency: Using std::move() allows the compiler to optimize since 
 it can just move the internal pointer rather than clone the object. 
 This can result in better performance, especially for large objects.
+
+move удаляет перемещаемый указатель
 */
 #include <iostream>
 #include <memory> // For std::unique_ptr

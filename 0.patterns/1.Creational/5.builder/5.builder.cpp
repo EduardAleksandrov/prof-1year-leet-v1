@@ -66,7 +66,7 @@ public:
 // Абстрактный класс строителя
 class BreadBuilder {
 protected:
-    std::unique_ptr<Bread> bread;
+    std::shared_ptr<Bread> bread;
 
 public:
     BreadBuilder() {
@@ -79,8 +79,8 @@ public:
     virtual void SetSalt() = 0;
     virtual void SetAdditives() = 0;
 
-    std::unique_ptr<Bread> getBread() {
-        return std::move(bread);
+    std::shared_ptr<Bread> getBread() {
+        return bread;
     }
 };
 
@@ -119,7 +119,7 @@ public:
 // Пекарь
 class Baker {
 public:
-    std::unique_ptr<Bread> Bake(std::shared_ptr<BreadBuilder>& breadBuilder) {
+    std::shared_ptr<Bread> Bake(std::shared_ptr<BreadBuilder>& breadBuilder) {
         breadBuilder->SetFlour();
         breadBuilder->SetSalt();
         breadBuilder->SetAdditives();
@@ -133,12 +133,12 @@ int main() {
 
     // Создаем билдер для ржаного хлеба
     std::shared_ptr<BreadBuilder> ryeBuilder = std::make_shared<RyeBreadBuilder>();
-    std::unique_ptr<Bread> ryeBread = baker.Bake(ryeBuilder);
+    std::shared_ptr<Bread> ryeBread = baker.Bake(ryeBuilder);
     std::cout << ryeBread->toString();
 
     // Создаем билдер для пшеничного хлеба
     std::shared_ptr<BreadBuilder> wheatBuilder = std::make_shared<WheatBreadBuilder>();
-    std::unique_ptr<Bread> wheatBread = baker.Bake(wheatBuilder);
+    std::shared_ptr<Bread> wheatBread = baker.Bake(wheatBuilder);
     std::cout << wheatBread->toString();
 
     return 0;
