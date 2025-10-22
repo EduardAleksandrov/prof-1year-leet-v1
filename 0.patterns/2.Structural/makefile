@@ -10,3 +10,6 @@ run3:
 
 run4:
 	g++ -std=c++17 -o build/4.facade ./4.facade/4.facade.cpp && ./build/4.facade
+
+run5:
+	g++ -std=c++17 -o build/5.composite ./5.composite/5.composite.cpp && ./build/5.composite
