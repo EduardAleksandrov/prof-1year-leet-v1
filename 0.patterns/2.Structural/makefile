@@ -4,3 +4,6 @@ run1:
 
 run2:
 	g++ -std=c++17 -o build/2.proxy ./2.proxy/2.proxy.cpp && ./build/2.proxy
+
+run3:
+	g++ -std=c++17 -o build/3.adapter ./3.adapter/3.adapter.cpp && ./build/3.adapter
