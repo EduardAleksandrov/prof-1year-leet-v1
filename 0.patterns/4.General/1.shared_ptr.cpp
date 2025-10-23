@@ -20,7 +20,7 @@ class BreadBuilder {
 public:
     std::shared_ptr<int> bread;
     BreadBuilder() {
-        bread = std::make_unique<int>(5);
+        bread = std::make_shared<int>(5);
     }
 
     std::shared_ptr<int> getBread() {

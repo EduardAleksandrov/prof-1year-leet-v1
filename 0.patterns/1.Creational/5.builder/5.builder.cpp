@@ -70,7 +70,7 @@ protected:
 
 public:
     BreadBuilder() {
-        bread = std::make_unique<Bread>();
+        bread = std::make_shared<Bread>();
     }
 
     virtual ~BreadBuilder() = default;
